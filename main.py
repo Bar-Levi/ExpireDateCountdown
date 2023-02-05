@@ -98,10 +98,11 @@ def AddProduct():
 
 
     def AutoFillName(e):
-        name_textbox.delete(0, END)
         try:
-            name_textbox.insert(0, search_list.get(e.widget.curselection()[0]))
-        except:
+            new_name = search_list.get(e.widget.curselection()[0])  # Try getting the chosen product's name.
+            name_textbox.delete(0, END)  # If succeeded - clear the name text box.
+            name_textbox.insert(0, new_name)  # Enter the chosen product's name.
+        except:  # If the user clicked an empty line in the products' list box.
             print("Tuple index out of range.")
 
     def UpdateName(e):
@@ -188,10 +189,11 @@ def ShowDates():
             pass
 
     def AutoFillName(e):
-        name_textbox.delete(0, END)
         try:
-            name_textbox.insert(0, search_list.get(e.widget.curselection()[0]))
-        except:
+            new_name = search_list.get(e.widget.curselection()[0])  # Try getting the chosen product's name.
+            name_textbox.delete(0, END)  # If succeeded - clear the name text box.
+            name_textbox.insert(0, new_name)  # Enter the chosen product's name.
+        except:  # If the user clicked an empty line in the products' list box.
             print("Tuple index out of range.")
 
     def UpdateName(e):
